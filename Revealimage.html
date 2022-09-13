@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Block Reveal Effect On Scroll</title>
+        <link rel="stylesheet" href="Revealimage.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <a style="text-decoration: none; color: snow; font-size: 3rem; text-align: center;" href="Main 2.html">
+<section >Home</section>
+</a>
+        <div class="smooth-scroll-wrapper">
+            <div class="content">
+                <div class="container">
+                    <h1 class="text">Golden Horse Origami</h1>
+                    <div class="img">
+                        <img src="All Images/Ori-11.jpg"/>
+                    </div>
+                    <p class="text">
+                    
+                        All you have to learn here is how to have It's almost like something 
+                        out of a book. Almost everything is going to happen for you automatically
+                        you don't have to spend any time or worrying. Take your time.
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">Enemey of boring</h1>
+                    <div class="img">
+                        <img src="All Images/Ori-12.jpg"/>
+                    </div>
+                    <p class="text">
+                        
+                        All you have to learn here is how to have It's almost like something 
+                        out of a book. Almost everything is going to happen for you automatically
+                        you don't have to spend any time or worrying. Take your time.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <h1 class="text">(R)evolution design</h1>
+                    <div class="img">
+                        <img src="All Images/Ori-13.jpg"/>
+                    </div>
+                    <p class="text">
+                        All you have to learn here is how to have It's almost like something 
+                        out of a book. Almost everything is going to happen for you automatically
+                        you don't have to spend any time or worrying. Take your time. 
+
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text">Kirigami Heat</h1>
+                    <div class="img">
+                        <img src="All Images/bird.jpg"/>
+                    </div>
+                    <p class="text">
+                        
+                        All you have to learn here is how to have It's almost like something 
+                        out of a book. Almost everything is going to happen for you automatically
+                        you don't have to spend any time or worrying. Take your time.
+                    </p>
+                </div>
+
+                <div class="container">
+                    <h1 class="text">Dana Hinders</h1>
+                    <div class="img">
+                        <img src="All Images/pinkey.jpg"/>
+                    </div>
+                    <p class="text">
+                        It is also highly probable that the process of folding was applied to other materials before paper was invented, so the origins of recreational folding may lie with cloth or leather.
+
+                    </p>
+                </div>
+
+                <div class="container">
+                    <h1 class="text">Complexity</h1>
+                    <div class="img">
+                    
+                        <img src="All Images/r19.jpg"/>
+                    
+                    </div>
+                    <p class="text">
+                        It is also highly probable that the process of folding was applied to other materials before paper was invented, so the origins of recreational folding may lie with cloth or leather.
+
+                    </p>
+                    <a style="text-decoration: none; color: snow; font-size: 3rem; text-align: center;" href="image link.html">
+                        <section >Home</section>
+                        </a>
+                </div>
+                
+
+                </div>
+
+
+            </div>
+        </div>
+        <script>
+            const body = document.body,
+                scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+                height = scrollWrap.getBoundingClientRect().height - 1,
+                speed = 0.04;
+
+            var offset = 0;
+
+            body.style.height = Math.floor(height) + "px";
+
+            function smoothScroll() {
+                offset += (window.pageYOffset - offset) * speed;
+
+                var scroll = "translateY(-" + offset + "px) translateZ(0)";
+                scrollWrap.style.transform = scroll;
+
+                callScroll = requestAnimationFrame(smoothScroll);
+            }
+
+            smoothScroll();
+
+            $(function () {
+                var elements = $(".text, .img").toArray();
+                $(window).scroll(function () {
+                    elements.forEach(function (item) {
+                        if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                            $(item).addClass("reveal");
+                        }
+                    });
+                });
+                elements.forEach(function (item) {
+                    if ($(this).scrollTop() >= $(item).offset().top - 400) {
+                        $(item).addClass("reveal");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
